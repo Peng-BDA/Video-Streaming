@@ -25,8 +25,10 @@ There is two methods to expose your port on Raspberry Pi to public network
 Because the video format is in MJPEG, I only find vlc-unity plugin supporting to plalback video in this format. 
 1. Set up a empty project in Unity.
 2. Import the vlc-unity package. There is a package called Vlc Canvas Example.unity. Open it.
-   ![unity](/Screenshot 2024-06-20 134807.png)
-   ![The San Juan Mountains are beautiful!](/Screenshot 2024-06-20 134807.png "San Juan Mountains")
+   ![The San Juan Mountains are beautiful!](/unity.png "San Juan Mountains")
+3. Update the url
+   ![The San Juan Mountains are beautiful!](/url.png "San Juan Mountains")
+
 
 
 
