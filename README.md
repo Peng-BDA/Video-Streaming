@@ -28,8 +28,3 @@ Because the video format is in MJPEG, I only find vlc-unity plugin supporting to
    ![The San Juan Mountains are beautiful!](/unity.png "San Juan Mountains")
 3. Update the url
    ![The San Juan Mountains are beautiful!](/url.png "San Juan Mountains")
-
-
-
-
-
