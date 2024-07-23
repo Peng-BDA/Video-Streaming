@@ -4,12 +4,16 @@ This file introduces playbacking live video from Raspberry Pi on Unity, includin
 * Expose ports on Raspberry Pi on public network
 * Use vlc-unity plugin to playback video on Unity 
 
-## Use Motion to setup video streaming on Raspberry Pi
+## Video streaming
+### Use Motion to setup video streaming on Raspberry Pi (motion seems not campatible with Raspberry pi 4 and 5)
 Follow this link: https://pimylifeup.com/raspberry-pi-webcam-server/ \
 **notes**: 
   * Motion Codec: MPJEG (Use less CPU resources to encode, but with less compression rates compared to other codec formats)
   * Need to adjust the parameters in /etc/motion/motion.conf. Or this video will be luggy. (Follow the link above)
-  
+
+### Use Python to build a server on Raspberry Pi
+Run sample code /mjpeg_server.py
+
 ## Expose ports on Raspberry Pi on public network
 There is two methods to expose your port on Raspberry Pi to public network 
 1. Set up Port Forwarding on your router
