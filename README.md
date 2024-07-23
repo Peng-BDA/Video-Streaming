@@ -11,7 +11,7 @@ Follow this link: https://pimylifeup.com/raspberry-pi-webcam-server/ \
   * Motion Codec: MPJEG (Use less CPU resources to encode, but with less compression rates compared to other codec formats)
   * Need to adjust the parameters in /etc/motion/motion.conf. Or this video will be luggy. (Follow the link above)
 
-### Use Python to build a server on Raspberry Pi
+### Use Python to build a server on Raspberry Pi (Test on Raspberry Pi 5 and Camera Moudule 3)
 Run sample code /mjpeg_server.py
 
 ## Expose ports on Raspberry Pi on public network
