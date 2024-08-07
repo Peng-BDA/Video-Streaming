@@ -14,18 +14,15 @@ from picamera2 import Picamera2
 from picamera2.encoders import JpegEncoder
 from picamera2.outputs import FileOutput
 
+from libcamera import controls
+
 PAGE = """\
 <html>
-<head>
-<title>picamera2 MJPEG streaming demo</title>
-</head>
 <body>
-<h1>Picamera2 MJPEG Streaming Demo</h1>
-<img src="stream.mjpg" width="640" height="480" />
+<img src="stream.mjpg" width="1920" height="1080" />
 </body>
 </html>
 """
-
 
 class StreamingOutput(io.BufferedIOBase):
     def __init__(self):
@@ -36,7 +33,6 @@ class StreamingOutput(io.BufferedIOBase):
         with self.condition:
             self.frame = buf
             self.condition.notify_all()
-
 
 class StreamingHandler(server.BaseHTTPRequestHandler):
     def do_GET(self):
@@ -77,14 +73,19 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.send_error(404)
             self.end_headers()
 
-
 class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
     allow_reuse_address = True
     daemon_threads = True
 
 
 picam2 = Picamera2()
-picam2.configure(picam2.create_video_configuration(main={"size": (640, 480)}))
+full_resolution = picam2.sensor_resolution
+print(full_resolution)
+# picam2.start(show_preview=True)
+picam2.set_controls({"AfMode":controls.AfModeEnum.Continuous})
+picam2.configure(picam2.create_video_configuration(main={"size": (1920, 1080)}))
+picam2.set_controls({'AfMode': controls.AfModeEnum.Manual, 'LensPosition': 20})
+
 output = StreamingOutput()
 picam2.start_recording(JpegEncoder(), FileOutput(output))
 
