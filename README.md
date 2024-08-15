@@ -1,4 +1,48 @@
-# Video-Streaming
+# Video-Streaming (Validated on Raspberry Pi 5 and Camera Module 3)
+This turtorial includes thr
+
+## 1. Video Streaming on Raspberry Pi
+   Download file mjpeg_server.py and run python mjpeg_server.py. It'll streams Mjpeg format's video. \
+   Access http://192.168.0.210:8000/stream.mjpg. You'll see the video. 
+
+## 2. Public access
+If you want your video streaming can be accessed on public network. There are two ways of implementing that. 
+* IP binding on your router
+* DNS binding using third-party package \
+There is already millions of blog introducing how to do IP binding on the router.\
+Follow this link to bind DNS with your IP: https://dashboard.ngrok.com/get-started/setup/linux \
+The network traffic goes through their edge servers. Need to subscribe after surpassing the limits.
+
+## 3. Stepper Motor Control
+Here we use 16-channel drive circuit to drive the stepper motor.
+
+
+
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This file introduces playbacking live video from Raspberry Pi on Unity, including three parts:
 * Use Motion to setup video streaming on Raspberry Pi
 * Expose ports on Raspberry Pi on public network
