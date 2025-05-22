@@ -1,5 +1,4 @@
 # Video-Streaming (Validated on Raspberry Pi 5 and Camera Module 3)
-This turtorial includes thr
 
 ## 1. Video Streaming on Raspberry Pi
    Download file mjpeg_server.py and run python mjpeg_server.py. It'll streams Mjpeg format's video. \
